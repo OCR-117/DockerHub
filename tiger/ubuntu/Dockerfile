@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH ubuntu:24.04
+FROM        --platform=$TARGETOS/$TARGETARCH ubuntu:22.04
 
 LABEL       author="Aurélien Delval-Carbonne" maintainer="aurelien.delval-carbonne@epita.fr"
 
