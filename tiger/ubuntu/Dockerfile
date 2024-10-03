@@ -5,7 +5,7 @@ LABEL       author="Aurélien Delval-Carbonne" maintainer="aurelien.delval-carbo
 # General Dependencies.
 RUN 		apt update -y \
       		&& apt install -y build-essential git graphviz g++-multilib llvm python-is-python3 valgrind \
-  			&& apt install -y autoconf autoconf-archive automake bison clang clang-format doxygen flex gawk ghc libboost-dev libboost-graph-dev libboost-program-options-dev libboost-system-dev libreadline-dev libtool texinfo xsltproc
+  			&& apt install -y autoconf autoconf-archive automake bison clang clang-format doxygen flex gawk ghc happy libboost-dev libboost-graph-dev libboost-program-options-dev libboost-system-dev libreadline-dev libtool texinfo xsltproc
 
 # ARM compilation & virtual machine.
 RUN 		apt install -y gcc-arm-linux-gnueabihf libc6-dev-armhf-cross qemu-user
