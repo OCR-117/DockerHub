@@ -14,12 +14,12 @@ RUN 		apt install -y gcc-arm-linux-gnueabihf libc6-dev-armhf-cross qemu-user
 RUN         git clone https://github.com/Genivia/RE-flex.git && cd RE-flex/ && ./clean.sh && ./build.sh && ./allinstall.sh && cd ../
 
 # Havm.
-RUN         git clone https://gitlab.lre.epita.fr/tiger/havm.git && cd havm/ && ./bootstrap && ./configure && make && make check && make install && cd ../
+RUN         git clone https://gitlab.lre.epita.fr/tiger/havm.git && cd havm/ && ./bootstrap && ./configure && make -j4 && make check && make install && cd ../
 
 # Nolimips.
 RUN         git clone https://gitlab.lre.epita.fr/tiger/nolimips.git && cd nolimips/ \
 			&& sed -i "s/^AX_CXX_COMPILE_STDCXX.*$//" configure.ac \
 			&& sed -i "s/^AX_COMPILER_FLAGS.*$//" configure.ac \
-			&& ./bootstrap && ./configure && make && make check && make install && cd ../
+			&& ./bootstrap && ./configure && make -j4 && make check && make install && cd ../
 
 SHELL ["/bin/bash", "-c"]
